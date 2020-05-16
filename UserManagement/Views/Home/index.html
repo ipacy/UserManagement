@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+    <title>ASP .Net</title>
+
+    <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+            id="sap-ui-bootstrap"
+            data-sap-ui-libs="sap.m,sap.ui.layout"
+            data-sap-ui-compatVersion="edge"
+            data-sap-ui-theme="sap_belize"
+            data-sap-ui-preload="async"
+            data-sap-ui-resourceroots='{"tmp_demo": ""}'>
+    </script>
+
+
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            sap.ui.require([
+                "sap/ui/core/ComponentContainer"
+            ], function (ComponentContainer) {
+                sap.ui.component({
+                    async: true,
+                    name: "tmp_demo"
+                }).then(function (yourComponent) {
+                    new ComponentContainer({
+                        component: yourComponent,
+                    }).placeAt("content");
+                });
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="content" class="sapUiBody"></div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿<mvc:View
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        controllerName="tmp_demo.controller.App"
+        displayBlock="true"
+        busyIndicatorDelay="0"
+        class="sapUiSizeCompact">
+    <App id="sampleApps"/>
+
+</mvc:View>
