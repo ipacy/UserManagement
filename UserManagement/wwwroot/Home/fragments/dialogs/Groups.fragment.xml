@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m"
+                         xmlns:form="sap.ui.layout.form"
+                         xmlns:core="sap.ui.core">
+
+    <Dialog title="{i18n>User}" class="sapUiSizeCompact">
+        <subHeader>
+            <Toolbar>
+                <SearchField
+                        liveChange="groupsSearchField"
+                        width="100%" />
+            </Toolbar>
+        </subHeader>
+        <ScrollContainer vertical="true" horizontal="false" height="20rem">
+        <List items="{groupsModel>/Groups}" id="GroupList">
+            <items>
+                <StandardListItem
+                        title="{groupsModel>Title}" info="{groupsModel>Id}" type="Active" press="onGroupSelect"/>
+            </items>
+        </List>
+        </ScrollContainer>
+        <Toolbar height="3rem">
+            <Input placeholder="{i18n>NewGroup}" value="{}" width="100%"/>
+            <Button icon="sap-icon://add" press="onAddNewGroup"/>
+        </Toolbar>
+        <buttons>
+            <Button text="{i18n>Cancel}" press="onGroupDialogCancel"/>
+        </buttons>
+    </Dialog>
+
+</core:FragmentDefinition>

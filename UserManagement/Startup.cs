@@ -29,11 +29,9 @@ namespace UserManagement
                 .AddCookie("CookieAuth", options =>
                 {
                     options.Cookie.Name = "MyAuthCookie";
-                    /* options.LoginPath = "/User/Login";
-                     options.AccessDeniedPath = "/User/AccessDenied";*/
                     options.LoginPath = "/Home/Login";
                     options.AccessDeniedPath = "/Home/AccessDenied";
-                    options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(2);
                 });
 
             services.AddAuthorization(options =>
@@ -41,6 +39,7 @@ namespace UserManagement
                 options.AddPolicy("AdminRole", builder
                     => builder.RequireClaim(ClaimTypes.Role, "Admin"));
             });
+            services.AddCors();
 
         }
 
@@ -53,17 +52,13 @@ namespace UserManagement
                 app.UseDeveloperExceptionPage();
             }
 
-            /*   DefaultFilesOptions options = new DefaultFilesOptions();
-               options.DefaultFileNames.Clear();
-               options.DefaultFileNames.Add("main.html");*/
-
+            app.UseCookiePolicy();
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseHttpsRedirection();
-            /* 
-             */
+
 
 
             app.UseEndpoints(endpoints =>

@@ -1,0 +1,144 @@
+{
+  "_version": "1.2.0",
+  "sap.app": {
+    "_version": "1.2.0",
+    "id": "tmp_demo",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "PAC Bot",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "dataSources": {
+    }
+  },
+  "sap.ui": {
+    "_version": "1.2.0",
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://task",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_hcb",
+      "sap_bluecrystal"
+    ]
+  },
+  "sap.ui5": {
+    "_version": "1.2.0",
+    "handleValidation": true,
+    "rootView": {
+      "viewName": "tmp_demo.view.App",
+      "type": "XML",
+      "id": "Vistex-DS1"
+    },
+    "dependencies": {
+      "minUI5Version": "1.64.0",
+      "libs": {
+        "sap.gantt": {
+          "minVersion": "1.64.0"
+        },
+        "sap.ui.core": {
+          "minVersion": "1.64.0"
+        },
+        "sap.m": {
+          "minVersion": "1.64.0"
+        },
+        "sap.uxap": {
+          "minVersion": "1.64.0"
+        },
+        "sap.ui.table": {
+          "minVersion": "1.64.0"
+        },
+        "sap.ui.layout": {
+          "minVersion": "1.64.0"
+        },
+        "sap.tnt": {
+          "minVersion": "1.64.0"
+        },
+        "sap.f": {
+          "minVersion": "1.64.0"
+        }
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "tmp_demo.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "style/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewPath": "tmp_demo.view",
+        "bypassed": {
+          "target": [
+            "notFound"
+          ]
+        },
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "home",
+          "target": [
+            "home"
+          ]
+        },
+        {
+          "pattern": "user",
+          "name": "user",
+          "target": [
+            "user"
+          ]
+        }
+      ],
+      "targets": {
+        "home": {
+          "viewName": "Home",
+          "viewPath": "tmp_demo.view.Home",
+          "viewId": "HomeView",
+          "viewType": "XML",
+          "transition": "show",
+          "controlId": "sampleApps",
+          "controlAggregation": "pages",
+          "title": ""
+        },
+        "user": {
+          "viewName": "User",
+          "viewPath": "tmp_demo.view.User",
+          "viewId": "UserView",
+          "viewType": "XML",
+          "transition": "show",
+          "controlId": "sampleApps",
+          "controlAggregation": "pages",
+          "title": ""
+        }
+      }
+    }
+  }
+}

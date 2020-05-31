@@ -1,0 +1,10 @@
+{
+  "name": "tpm_demo",
+  "version": "1.0.0",
+  "description": "",
+  "author": "PAC",
+  "license": "ISC",
+  "dependencies": {
+    "Microsoft.AspNet.Cors": "6.0.0-rc1-final"
+  }
+}

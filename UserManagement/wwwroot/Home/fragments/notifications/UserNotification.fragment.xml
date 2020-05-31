@@ -1,0 +1,31 @@
+﻿<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+    <ResponsivePopover
+		title="Ready For Approvals"
+		placement="Bottom" >
+        <endButton>
+            <Button text="Close" press="onNotificationClose" />
+        </endButton>
+        <content>
+            <List items="{path: 'globalModel>/userInfo/Notifications', templateShareable : 'true'}">
+                <NotificationListItem
+                        title="{globalModel>TechName}"
+                        description="{globalModel>Name}"
+                        showCloseButton="true"
+                        datetime="{globalModel>RequestedOn}"
+                        authorName="{globalModel>RequestedBy}"
+                        unread="true"
+                        priority="High"
+                        close="{onItemClose}"
+                        press="{onListItemPress}"
+                        authorPicture="{authorPicture}">
+                    <!--<buttons>
+                        <Button text="Approve" type="Accept" press="{onButtonPress}"/>
+                        <Button text="Reject" type="Reject" press="{onButtonPress}"/>
+                    </buttons>-->
+                </NotificationListItem>
+            </List>
+        </content>
+    </ResponsivePopover>
+</core:FragmentDefinition>
